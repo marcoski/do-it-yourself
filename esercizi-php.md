@@ -38,7 +38,7 @@ Se ad esempio scrivete nella barra degli indirizzi del browser http://localhost/
 7. Scrivere un algoritmo che, preso in input il valore N>0, calcoli la media aritmetica dei primi N numeri positivi dispari
 8. Calcolare il prodotto di due numeri naturali, mediante somme successive
 -----
-#### ESERCIZI ITERAZIONE ENUMERATIVA
+#### ESERCIZI ITERAZIONE ENUMERATIVA (FOR)
 1. Scrivere un algoritmo che, dato un numero compreso nell’intervallo [1, 10], visualizzi i suoi primi 10 multipli.
 2. Scrivere un algoritmo che visualizza in ordine crescente tutti i numeri naturali compresi tra due numeri scelti dall'utente
 3. Scrivere un algoritmo che visualizza in ordine decrescente tutti i numeri naturali compresi tra due numeri scelti dall'utente (imporre con l’input obbligato che il secondo numero inserito sia maggiore o uguale al primo).
