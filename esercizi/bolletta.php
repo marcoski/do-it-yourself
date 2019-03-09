@@ -1,26 +1,28 @@
 <form method="post">
-  <input type="text" name="a" placeholder="Inserisci a">
-  <input type="text" name="b" placeholder="Inserisci b">
-  <button type="submit">Calcola MCD</button>
+  <input type="text" name="consumo" placeholder="Inserisci la lettura del tuo contatore in m3">
+  <button type="submit">Calcola Bolletta</button>
+  <button type="reset">Reset</button>
 </form>
 <?php
-if (array_key_exists('a', $_POST) && array_key_exists('b', $_POST)) {
-  // ALGORITMO DI EUCLIDE
-  $aOriginal = $_POST['a'];
-  $bOriginal = $_POST['b'];
-  $a = $_POST['a'];
-  $b = $_POST['b'];
-  if ($b == 0) {
-    print "<h1>Il massimo comun divisore tra $aOriginal e $bOriginal è $a</h1>";
+if (array_key_exists('consumo', $_POST)) {
+  $consumo = $_POST['consumo'];
+  if (!is_numeric($consumo)) {
+    print '<h1>Inserisci un numero per favore!!!</h1>';
     exit;
   }
-
-  while ($b != 0) {
-    $resto = $a % $b;
-    $a = $b;
-    $b = $resto;
+  if ($consumo <= 0) {
+    print '<h1>Inserisci un consumo maggiore di 0!!!</h1>';
+    exit;
+  }
+  $bolletta = 20;
+  $differenzaConsumo = $consumo - 100;
+  if ($differenzaConsumo <= 0) {
+    $bolletta = $bolletta + ($consumo * 2.5);
+  } else {
+    $bolletta = $bolletta + ($differenzaConsumo * 4) + 250;
   }
 
-  print "<h1>Il massimo comun divisore tra $aOriginal e $bOriginal è $a</h1>";
+  print "<h1>Il costo della tua bolletta è: $bolletta 
+  <br> La differenza di consumo è: $differenzaConsumo</h1>";  
 }
 ?>
